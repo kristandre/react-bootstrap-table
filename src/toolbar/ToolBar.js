@@ -245,7 +245,7 @@ class ToolBar extends Component {
         <button type='button'
           className='btn btn-success hidden-print'
           onClick={ this.handleExportCSV }>
-            <i className='glyphicon glyphicon-export'></i>{ this.props.exportCSVText }
+            <i className='fa fa-download'></i>{ this.props.exportCSVText }
         </button>
       );
     }
