@@ -13,7 +13,7 @@ function toString(data, keys) {
   let dataString = '';
   if (data.length === 0) return dataString;
 
-  dataString += keys.map(x => x.header).join(',') + '\n';
+  dataString += keys.map(x => x.header).join(';') + '\n';
 
   data.map(function(row) {
     keys.map(function(col, i) {
@@ -21,7 +21,7 @@ function toString(data, keys) {
       const value = typeof format !== 'undefined' ? format(row[field], row) : row[field];
       const cell = typeof value !== 'undefined' ? ('"' + value + '"') : '';
       dataString += cell;
-      if (i + 1 < keys.length) dataString += ',';
+      if (i + 1 < keys.length) dataString += ';';
     });
 
     dataString += '\n';
